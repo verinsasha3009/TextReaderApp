@@ -1,0 +1,62 @@
+﻿<Window x:Class="WpfAppTest.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfAppTest"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Window.Resources>
+
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="153*"/>
+            <ColumnDefinition Width="247*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="350"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <TextBlock TextWrapping="Wrap" FontSize="26" FontWeight="Bold" Margin="235,10,215,10" Grid.ColumnSpan="2"><Run Text="Счи"/><Run Language="ru-ru" Text="т"/><Run Text="ыватель текста"/></TextBlock>
+        <Button Margin="21,14,170,10" FontWeight="Bold" Grid.Row="1" Click="button1_Click">Выбрать</Button>
+        <TextBox x:Name="text1" MaxLength="250" Margin="155,14,155,10" Grid.Row="1"  Text="путь к картинке" Grid.ColumnSpan="2"/>
+        <Button Margin="375,13,25,11" RenderTransformOrigin="0.5,0.5" FontWeight="Bold" Grid.Row="1" Click="button2_Click" Background="#00000000" Grid.Column="1">Конвертировать
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.41"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Border Margin="29,26,459,62"   BorderBrush="Gray"  BorderThickness="1,3,1,5" Grid.Row="2" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2">
+            <Border.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Border.RenderTransform>
+            <Border.Background >
+                <SolidColorBrush Color="Gray"></SolidColorBrush>
+            </Border.Background>
+            <Image   x:Name="mainImage" Margin="-1,24,-1,21" RenderTransformOrigin="0.5,0.5" >
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleY="-1"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+               
+            </Image>
+        </Border>
+        <TextBox x:Name="textBox" Margin="70,26,29,62" Background="Azure" FontSize="10" Grid.Row="2" Grid.Column="1" Text=""></TextBox>
+    </Grid>
+</Window>
